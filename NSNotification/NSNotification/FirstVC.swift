@@ -8,13 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstVC: UIViewController {
 
+    @IBOutlet weak var firstVCLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
+    @objc func afterNotifited(notification: NSNotification) {
+        firstVCLabel.text = (notification.object as! String)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("key"), object: nil)
+    }
+    
+    @IBAction func registerButton(_ sender: Any) {
+        NotificationCenter.default.addObserver(self, selector: #selector(afterNotifited(notification:)), name: .notifications, object: nil)
+    }
 
 }
 

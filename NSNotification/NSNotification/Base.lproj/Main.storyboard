@@ -1,24 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FirstVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FirstVC" customModule="NSNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="firstVCID" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSm-yM-Vnm">
+                                <rect key="frame" x="177" y="60" width="60.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-Vt-gBo">
+                                <rect key="frame" x="151.5" y="414" width="111.5" height="68"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting Data..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsV-ci-AAF">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMK-vg-Gw5">
+                                        <rect key="frame" x="0.0" y="38" width="111.5" height="30"/>
+                                        <state key="normal" title="Register"/>
+                                        <connections>
+                                            <action selector="registerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79l-fO-OUq"/>
+                                            <segue destination="MiI-Br-N57" kind="show" id="8Bk-48-m8X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Dc-Vt-gBo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4sV-R9-cnT"/>
+                            <constraint firstItem="8Dc-Vt-gBo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gy4-Ck-8Ag"/>
+                            <constraint firstItem="OSm-yM-Vnm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Sm9-tf-N0h"/>
+                            <constraint firstItem="OSm-yM-Vnm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tlL-zN-5fi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="B6k-DE-8zn"/>
+                    <connections>
+                        <outlet property="firstVCLabel" destination="OsV-ci-AAF" id="b1e-8w-fMC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="189.85507246376812" y="130.58035714285714"/>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="HcL-dE-75b">
+            <objects>
+                <viewController id="MiI-Br-N57" customClass="SecondVC" customModule="NSNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="secondVCID" id="vMO-4E-ENr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SecondVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kae-t2-Wd5">
+                                <rect key="frame" x="164.5" y="60" width="85.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fis-AX-dz2">
+                                <rect key="frame" x="8" y="414" width="398" height="68"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Exx-dg-Mux">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcO-fz-nYA">
+                                        <rect key="frame" x="0.0" y="38" width="398" height="30"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="tabToNotifyBack:" destination="MiI-Br-N57" eventType="touchUpInside" id="fT6-Fr-RZy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fis-AX-dz2" firstAttribute="centerY" secondItem="vMO-4E-ENr" secondAttribute="centerY" id="4oR-vf-8ZZ"/>
+                            <constraint firstItem="Fis-AX-dz2" firstAttribute="leading" secondItem="vci-yQ-UNg" secondAttribute="leading" constant="8" id="Aqw-hc-SxJ"/>
+                            <constraint firstItem="Fis-AX-dz2" firstAttribute="centerX" secondItem="vMO-4E-ENr" secondAttribute="centerX" id="GO9-Ax-0aG"/>
+                            <constraint firstItem="kae-t2-Wd5" firstAttribute="centerX" secondItem="vMO-4E-ENr" secondAttribute="centerX" id="XML-EW-WRc"/>
+                            <constraint firstItem="vci-yQ-UNg" firstAttribute="trailing" secondItem="Fis-AX-dz2" secondAttribute="trailing" constant="8" id="t7t-cY-WbW"/>
+                            <constraint firstItem="kae-t2-Wd5" firstAttribute="top" secondItem="vci-yQ-UNg" secondAttribute="top" constant="16" id="xrQ-yc-y3S"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vci-yQ-UNg"/>
+                    </view>
+                    <connections>
+                        <outlet property="secondTextField" destination="Exx-dg-Mux" id="WyT-fW-weV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iL-Yo-xGC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.11594202898561" y="130.58035714285714"/>
         </scene>
     </scenes>
 </document>

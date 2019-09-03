@@ -8,23 +8,22 @@
 
 import UIKit
 
+extension Notification.Name{
+    static let notifications = Notification.Name("key")
+}
+
 class SecondVC: UIViewController {
 
+    @IBOutlet weak var secondTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func tabToNotifyBack(_ sender: UIButton) {
+        let dataToSend = secondTextField.text
+        NotificationCenter.default.post(name: .notifications, object: dataToSend)
+        dismiss(animated: true, completion: nil)
     }
-    */
 
 }
