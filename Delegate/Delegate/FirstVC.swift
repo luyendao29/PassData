@@ -17,6 +17,7 @@ class FirstVC: UIViewController, SecondViewControllerDelegate {
         super.viewDidLoad()
         
     }
+    
     func sentoFirstVc(data: String?) {
         lableData.text = data
     }

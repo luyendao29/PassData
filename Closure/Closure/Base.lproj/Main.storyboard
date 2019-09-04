@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FirstVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FirstVC" customModule="Closure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="keS-AN-6H3">
+                                <rect key="frame" x="139" y="410" width="136" height="76"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting Data..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOT-gx-R6u">
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNI-4m-Oar">
+                                        <rect key="frame" x="0.0" y="46" width="136" height="30"/>
+                                        <state key="normal" title="Clicked To Get Data"/>
+                                        <connections>
+                                            <segue destination="UTZ-yR-ir1" kind="show" id="Da6-CZ-XU4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="keS-AN-6H3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V0Z-MF-rNK"/>
+                            <constraint firstItem="keS-AN-6H3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q7n-OK-mZb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstLabel" destination="pOT-gx-R6u" id="bUT-aQ-YUZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="ADG-pv-hqi">
+            <objects>
+                <viewController id="UTZ-yR-ir1" customClass="SecondVC" customModule="Closure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D3e-Al-Kvd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hjx-tr-wCW">
+                                <rect key="frame" x="0.0" y="410" width="414" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBh-Sb-Wrh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsT-cg-jpv">
+                                        <rect key="frame" x="0.0" y="46" width="414" height="30"/>
+                                        <state key="normal" title="Clicked To Pass Data"/>
+                                        <connections>
+                                            <action selector="passData:" destination="UTZ-yR-ir1" eventType="touchUpInside" id="ZBW-ad-zDk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hjx-tr-wCW" firstAttribute="centerY" secondItem="D3e-Al-Kvd" secondAttribute="centerY" id="CF3-fF-eRl"/>
+                            <constraint firstItem="edJ-nk-OKF" firstAttribute="trailing" secondItem="Hjx-tr-wCW" secondAttribute="trailing" id="LSg-5Z-oUI"/>
+                            <constraint firstItem="Hjx-tr-wCW" firstAttribute="leading" secondItem="edJ-nk-OKF" secondAttribute="leading" id="csN-XG-oJl"/>
+                            <constraint firstItem="Hjx-tr-wCW" firstAttribute="centerX" secondItem="D3e-Al-Kvd" secondAttribute="centerX" id="nKn-rV-2Ok"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="edJ-nk-OKF"/>
+                    </view>
+                    <connections>
+                        <outlet property="secondTextField" destination="yBh-Sb-Wrh" id="1dX-zt-pF3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Co5-il-ii5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="21"/>
+        </scene>
+    </scenes>
+</document>
