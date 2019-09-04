@@ -8,13 +8,14 @@
 
 import UIKit
 
-protocol SecondViewControllerDelegate {
+protocol SecondViewControllerDelegate: class {
     func sentoFirstVc(data: String?)
 }
+
 class SecondVC: UIViewController {
     @IBOutlet weak var textFileddata: UITextField!
     
-    var delegate: SecondViewControllerDelegate?
+    weak var delegate: SecondViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
