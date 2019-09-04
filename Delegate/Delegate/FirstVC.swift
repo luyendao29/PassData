@@ -1,5 +1,5 @@
 //
-//  SecondVC.swift
+//  FirstVC.swift
 //  Delegate
 //
 //  Created by Boss on 9/4/19.
@@ -8,26 +8,23 @@
 
 import UIKit
 
-protocol SecondViewControllerDelegate {
-    func sentoFirstVc(data: String?)
-}
-class SecondVC: UIViewController {
-    @IBOutlet weak var textFileddata: UITextField!
+class FirstVC: UIViewController, SecondViewControllerDelegate {
     
-    var delegate: SecondViewControllerDelegate?
+    
+    @IBOutlet weak var lableData: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    func sentoFirstVc(data: String?) {
+        lableData.text = data
     }
     
-    @IBAction func PassData(_ sender: Any) {
-        if textFileddata != nil {
-            delegate?.sentoFirstVc(data: textFileddata.text)
-            dismiss(animated: true, completion: nil)
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? SecondVC
+        vc?.delegate = self
     }
-    
 
     /*
     // MARK: - Navigation

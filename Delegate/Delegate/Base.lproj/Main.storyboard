@@ -10,30 +10,87 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FirstVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstVC" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hSs-9Q-12W">
+                                <rect key="frame" x="158.5" y="410.5" width="97.5" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watting data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3n-Xn-Wd9">
+                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvt-j4-2Ec">
+                                        <rect key="frame" x="0.0" y="45" width="97.5" height="30"/>
+                                        <state key="normal" title="Register"/>
+                                        <connections>
+                                            <segue destination="lSb-Y8-ukD" kind="show" id="aB0-dH-OiQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hSs-9Q-12W" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A5F-az-RPx"/>
+                            <constraint firstItem="hSs-9Q-12W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nR9-rF-Vxg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lableData" destination="H3n-Xn-Wd9" id="Tbl-di-Kzk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--SecondVC-->
         <scene sceneID="S6h-pX-LHM">
             <objects>
-                <viewController id="lSb-Y8-ukD" sceneMemberID="viewController">
+                <viewController id="lSb-Y8-ukD" customClass="SecondVC" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kcg-q9-F4s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="duo-Dj-ZAa">
+                                <rect key="frame" x="10" y="391.5" width="394" height="113"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pin-D5-8sp">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-eg-RfC">
+                                        <rect key="frame" x="0.0" y="83" width="394" height="30"/>
+                                        <state key="normal" title="PassData"/>
+                                        <connections>
+                                            <action selector="PassData:" destination="lSb-Y8-ukD" eventType="touchUpInside" id="JgJ-83-Gy6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="duo-Dj-ZAa" firstAttribute="centerY" secondItem="Kcg-q9-F4s" secondAttribute="centerY" id="amI-C8-j8F"/>
+                            <constraint firstItem="zki-Rn-5in" firstAttribute="trailing" secondItem="duo-Dj-ZAa" secondAttribute="trailing" constant="10" id="egQ-TO-VPF"/>
+                            <constraint firstItem="duo-Dj-ZAa" firstAttribute="leading" secondItem="zki-Rn-5in" secondAttribute="leading" constant="10" id="fOX-cc-pkJ"/>
+                            <constraint firstItem="duo-Dj-ZAa" firstAttribute="centerX" secondItem="Kcg-q9-F4s" secondAttribute="centerX" id="ptK-eL-QFh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zki-Rn-5in"/>
                     </view>
+                    <connections>
+                        <outlet property="textFileddata" destination="Pin-D5-8sp" id="ctE-te-68C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th8-Fj-FwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
